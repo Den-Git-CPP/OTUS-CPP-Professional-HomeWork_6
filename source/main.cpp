@@ -1,7 +1,7 @@
-﻿#include "matrix.h"
-
-#include <iostream>
+﻿#include <iostream>
 #include <cassert>
+
+#include "matrix.h"
 
 int main() {
 	 // бесконечная матрица int заполнена значениями -1 пример ДЗ
@@ -24,7 +24,7 @@ int main() {
 		std::cout << x << y << v << "\n";
 	}
 	
-	//матрица заполнения 
+	//матрица заполнения согласно шагам по ДЗ
 	int n = 10;
 	Matrix<int, 0> matrix_2;
 	for (int i = 0; i < n; ++i) {
