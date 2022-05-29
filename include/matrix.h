@@ -78,20 +78,35 @@ public:
 	public:
 		iterator(typename storage::iterator iter)
 			: it(iter) {};
+
 		bool operator==(iterator& rhs) {
 			return it == rhs.it;
 		}
+
 		bool operator!=(iterator& rhs) {
 			return it != rhs.it;
 		}
+		/**
+		 * @brief Оператор декремента.
+		 * 
+		 * @return iterator& итератор для обращения к пердыдущему элементу
+		 */
 		iterator& operator--() {
 			--it;
 			return *this;
 		}
+		/**
+		 * @brief Оператор инкремента.
+		 * 
+		 * @return iterator& итератор  для обращения к следующему элементу
+		 */
 		iterator& operator++() {
 			++it;
 			return *this;
 		}
+		/**
+		 * @brief получение элемента tuple, на который указывает итератор 
+		 */
 		std::tuple<std::size_t, std::size_t, T> operator*() {
 			return {
 				std::get<0>(it->first),
@@ -101,16 +116,25 @@ public:
 	protected:
 		typename storage::iterator it;
 	};
-
+	/**
+	 * @brief Возращает количество элементов в матрице/размер матрицы.
+	 */
 	std::size_t size() {
 		return _data.size();
 	};
 	Row operator[](std::size_t index) {
 		return Row(_data, index);
 	};
+	/**
+	 * @brief Извлекает итератор для первого элемента в указанной матрице.
+	 */
 	Matrix::iterator begin() {
 		return _data.begin();
 	};
+	/**
+	 * @brief Извлекает итератор для крайнего элемента в указанной матрице.
+	 */
+	
 	Matrix::iterator end() {
 		return _data.end();
 	};
