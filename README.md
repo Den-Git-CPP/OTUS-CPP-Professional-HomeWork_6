@@ -35,13 +35,18 @@ std::tie(x, y, v) = c;
 std::cout << x << y << v << std::endl;
 }
 
+
 Книги:
 Андрианова А.А. Имсагилов Л.Н. Мухтарова Т.М. "Объектно-ориентрованное программирование на С++" 2010г.
 Полезные ссылки:
 - Двумерные динамические массивы
+
 https://code-live.ru/post/cpp-array-tutorial-part-2/
+
 https://habr.com/ru/post/495444/
+
 https://youtu.be/UhiG8c7hmIA
 
 - Прокси класс и перегрузка оператора []
+
 https://overcoder.net/q/72554/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%BF%D1%80%D0%BE%D0%BA%D1%81%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%81-%D0%B2-c

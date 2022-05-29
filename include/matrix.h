@@ -2,12 +2,27 @@
 #include <tuple>
 #include <map>
 
+/**
+ * @brief класс Matrix 2-мерная разреженная матрица 
+ * 
+ * @tparam T - тип элементов по умолчанию в матрице 
+ * @tparam default_value- значение элементов по умолчанию в матрице 
+ */
 template<typename T, T default_value>
 class Matrix {
 	using storage = std::map<std::tuple<std::size_t, std::size_t>, T>;
-
+	/**
+ 	* @brief Класс Element отдельный элемент в матрице
+ 	* 
+ 	*/
 	class Element {
-	public:
+	public:/**
+	 * @brief Конструктор класса Element
+	 * 
+	 * @param data - значение элемента
+	 * @param row индекс строки
+	 * @param col индекс столбца
+	 */
 		Element(storage& data, std::size_t row, std::size_t col) :
 			_data(data), _row(row), _col(col) {};
 		operator T() {
@@ -37,6 +52,12 @@ class Matrix {
 		std::size_t _row, _col;
 		storage& _data;
 	};
+	/**
+ 	 * @brief Конструктор класса Row для размещения Element
+	 * 
+	 * @param data - значение элемента
+	 * @param row индекс строки
+	 */ 
 
 	class Row {
 	public:
@@ -48,7 +69,10 @@ class Matrix {
 		std::size_t _row;
 		storage& _data;
 	};
-
+/**
+ * @brief Класс ононаправленного итератора для обхода значений в матрице
+ * 
+ */
 public:
 	class iterator : public std::iterator<std::forward_iterator_tag, T> {
 	public:
